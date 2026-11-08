@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán đơn hàng</title>
+    <script type="module" crossorigin src="./assets/index-JsKajFsG.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-mQrGVIRv.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">K20 / Bài tập TypeScript</p>
+        <h1>Thanh toán đơn hàng</h1>
+        <p>Tạo và tra cứu biên nhận thanh toán mô phỏng.</p>
+      </header>
+      <div class="layout">
+        <section aria-labelledby="payment-heading">
+          <h2 id="payment-heading">Thông tin thanh toán</h2>
+          <form id="payment-form" novalidate>
+            <label for="order-id">Mã đơn hàng</label>
+            <input id="order-id" type="number" min="1" step="1" placeholder="Ví dụ 1001" required>
+            <label for="amount">Số tiền (VND)</label>
+            <input id="amount" type="number" step="any" placeholder="Ví dụ 250000" required>
+            <label for="method">Phương thức thanh toán</label>
+            <select id="method">
+              <option value="COD">COD (thu tiền khi giao hàng)</option>
+              <option value="BANK_TRANSFER">Chuyển khoản</option>
+              <option value="E_WALLET">Ví điện tử</option>
+            </select>
+            <button type="submit">Thanh toán</button>
+          </form>
+          <p id="payment-status" class="status" role="status"></p>
+        </section>
+        <section aria-labelledby="receipts-heading">
+          <h2 id="receipts-heading">Biên nhận trong phiên</h2>
+          <form id="search-form" novalidate>
+            <label for="receipt-id">Mã biên nhận</label>
+            <input id="receipt-id" type="number" min="1" step="1" placeholder="Ví dụ 1" required>
+            <button type="submit" class="secondary">Tìm biên nhận</button>
+          </form>
+          <p id="search-status" class="status" role="status"></p>
+          <p id="empty-list" class="empty">Chưa có biên nhận.</p>
+          <ul id="receipts" aria-label="Danh sách biên nhận"></ul>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
